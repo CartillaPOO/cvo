@@ -31,15 +31,15 @@ public class EventosLabel implements MouseListener{
 
         //Eventos segunda linea
         if(event.getSource() == miDialogoTest.panelTest.lbModelo){
-            System.out.println("EmpresaAutomotriz");
+            System.out.println("Modelo");
         }
 
         if(event.getSource() == miDialogoTest.panelTest.lbMiModelo){
-            System.out.println("miEmpresa");
+            System.out.println("miModelo");
         }
 
         if(event.getSource() == miDialogoTest.panelTest.lbNewModelo){
-            System.out.println("new EmpresaAutomotriz");
+            System.out.println("new Modelo();");
         }
 
         //Eventos tercera linea
@@ -52,7 +52,7 @@ public class EventosLabel implements MouseListener{
         }
 
         if(event.getSource() == miDialogoTest.panelTest.lbNewControlador){
-            System.out.println("new Controlador");
+            System.out.println("new Controlador();");
         }
 
     }
