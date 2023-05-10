@@ -9,11 +9,13 @@ import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.JPopupMenu.Separator;
 
+import cvo.modelo.Texto;
+
 public class PanelTest extends JPanel{
     //---Atributos---
 
     //Labels
-    public JLabel lbVentanaPrincipal;
+    public Texto lbVentanaPrincipal;
     public JLabel lbMiventana;
     public JLabel lbNewVentanaPrincipal;
 
@@ -41,7 +43,7 @@ public class PanelTest extends JPanel{
         this.setLayout(null);
 
         //Labels para la primera linea
-        lbVentanaPrincipal = new JLabel("VentanaPrincipal ");
+        lbVentanaPrincipal = new Texto("VentanaPrincipal ");
         lbVentanaPrincipal.setToolTipText("Ir al codigo");
         lbVentanaPrincipal.setBounds(10, 100, getAnchoTexto(lbVentanaPrincipal), getAltoTexto(lbVentanaPrincipal));
         lbVentanaPrincipal.setForeground(colorClase);

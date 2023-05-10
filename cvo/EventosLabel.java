@@ -8,6 +8,7 @@ import javax.swing.JLabel;
 
 public class EventosLabel implements MouseListener{
 
+    //Atributos
     private FrameTest miDialogoTest;
 
     public EventosLabel(FrameTest principal){
@@ -16,8 +17,9 @@ public class EventosLabel implements MouseListener{
     }
     @Override
     public void mouseClicked(MouseEvent event) {
+        String miEvento = event.getSource().toString();
         //Eventos primera linea
-        if(event.getSource() == miDialogoTest.panelTest.lbVentanaPrincipal){
+        if(event.getSource().toString() == "VentanaPrincipal "){
             System.out.println("VentanaPrincipal");
         }
 
@@ -26,7 +28,9 @@ public class EventosLabel implements MouseListener{
         }
 
         if(event.getSource() == miDialogoTest.panelTest.lbNewVentanaPrincipal){
-            System.out.println("new VentanaPrincipal");
+            //Aqui se colocan las instancias del sistema MVC
+            
+            System.out.println("new VentanaPrincipal();");
         }
 
         //Eventos segunda linea
@@ -54,6 +58,8 @@ public class EventosLabel implements MouseListener{
         if(event.getSource() == miDialogoTest.panelTest.lbNewControlador){
             System.out.println("new Controlador();");
         }
+
+        //---Eventos Para VentanaPrincipal---
 
     }
 
