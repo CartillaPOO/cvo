@@ -128,6 +128,7 @@ public class PanelTest extends JPanel{
         return posicionInicial;
     }
     private int getPosY(Texto label){
+        //TODO: Cambiar nombre a variable h
         int h = 3;
         int posicionInicial = getAltoTexto(label) + label.getY() + h;
         return posicionInicial;

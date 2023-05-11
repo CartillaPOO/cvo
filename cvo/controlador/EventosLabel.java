@@ -3,6 +3,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 import cvo.vista.FrameTest;
@@ -10,17 +11,17 @@ import cvo.vista.FrameTest;
 public class EventosLabel implements MouseListener{
 
     //---Atributos---
-    private FrameTest miDialogoTest;
+    private FrameTest miFrameTest;
 
     //Referencias
 
     public EventosLabel(FrameTest principal){
-        miDialogoTest = principal;
-        miDialogoTest.panelTest.agregarEscuchadores(this);
+        miFrameTest = principal;
+        miFrameTest.panelTest.agregarEscuchadores(this);
     }
     @Override
     public void mouseClicked(MouseEvent event) {
-        String nombreModelo = miDialogoTest.panelTest.getNombreModelo();
+        String nombreModelo = miFrameTest.panelTest.getNombreModelo();
         String Evento = event.getSource().toString();
         //Eventos primera linea
         if(Evento.equals("VentanaPrincipal ")){
@@ -33,7 +34,6 @@ public class EventosLabel implements MouseListener{
 
         if(Evento.equals("new VentanaPrincipal();")){
             //Aqui se colocan las instancias del sistema MVC
-            
             System.out.println("new VentanaPrincipal();");
         }
 
@@ -68,8 +68,12 @@ public class EventosLabel implements MouseListener{
 
     }
 
+    public void setWindowPosition(JFrame ventanaPrincipal){
+        ventanaPrincipal.setLocation(miFrameTest.getWidthPOSX(), miFrameTest.getScreenPOSY());
+    }
+
     @Override
-    public void mouseEntered(MouseEvent event) {
+    public void mouseEntered(MouseEvent event){
         //TODO: Hacer que se cambie el color del label cuando este encima
     }
 
