@@ -1,10 +1,11 @@
-package cvo;
-
+package cvo.controlador;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+
+import cvo.vista.FrameTest;
 
 public class EventosLabel implements MouseListener{
 
@@ -67,10 +68,12 @@ public class EventosLabel implements MouseListener{
 
     @Override
     public void mouseEntered(MouseEvent event) {
+        //TODO: Hacer que se cambie el color del label cuando este encima
     }
 
     @Override
     public void mouseExited(MouseEvent event) {
+        //TODO: Hacer que vuelva al color original
     }
 
     @Override

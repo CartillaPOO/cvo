@@ -1,7 +1,7 @@
 package ejecutable;
 
-import cvo.EventosLabel;
-import cvo.FrameTest;
+import cvo.controlador.EventosLabel;
+import cvo.vista.FrameTest;
 
 public class test {
     public static void main(String[] args) {

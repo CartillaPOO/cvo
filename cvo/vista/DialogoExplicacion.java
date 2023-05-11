@@ -1,4 +1,4 @@
-package cvo;
+package cvo.vista;
 import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import javax.swing.JLabel;

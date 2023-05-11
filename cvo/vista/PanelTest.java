@@ -1,4 +1,4 @@
-package cvo;
+package cvo.vista;
 
 import java.awt.Color;
 import java.awt.Dimension;
