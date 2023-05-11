@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.MouseListener;
 
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.JPopupMenu.Separator;
@@ -16,16 +15,16 @@ public class PanelTest extends JPanel{
 
     //Labels
     public Texto lbVentanaPrincipal;
-    public JLabel lbMiventana;
-    public JLabel lbNewVentanaPrincipal;
+    public Texto lbMiventana;
+    public Texto lbNewVentanaPrincipal;
 
-    public JLabel lbModelo;
-    public JLabel lbMiModelo;
-    public JLabel lbNewModelo;
+    public Texto lbModelo;
+    public Texto lbMiModelo;
+    public Texto lbNewModelo;
 
-    public JLabel lbControlador;
-    public JLabel lbMiControlador;
-    public JLabel lbNewControlador;
+    public Texto lbControlador;
+    public Texto lbMiControlador;
+    public Texto lbNewControlador;
 
     //Colores
     private Color colorClase = new Color(229, 56, 38);
@@ -34,11 +33,11 @@ public class PanelTest extends JPanel{
     private Color colorFondo = new Color(29, 32, 33);
 
     //Nombre del modelo
-    String nombreModelo;
+    private String nombreModelo;
 
-    public PanelTest(String nomreModelo){
+    public PanelTest(String nombreModelo){
 
-        this.nombreModelo = nomreModelo;
+        this.nombreModelo = nombreModelo;
         //Caracteriticas de la ventana
         this.setLayout(null);
 
@@ -50,52 +49,52 @@ public class PanelTest extends JPanel{
         this.add(lbVentanaPrincipal);
 
 
-        lbMiventana = new JLabel("miVentana =");
+        lbMiventana = new Texto("miVentana = ");
         lbMiventana.setToolTipText("Ver objeto en RAM");
         lbMiventana.setBounds(getPosX(lbVentanaPrincipal), 100, getAnchoTexto(lbMiventana), getAltoTexto(lbMiventana));
         lbMiventana.setForeground(colorObjeto);
         this.add(lbMiventana);
         System.out.println("getPosX: " + lbVentanaPrincipal.getX());
 
-        lbNewVentanaPrincipal = new JLabel(" new VentanaPrincipal();");
+        lbNewVentanaPrincipal = new Texto("new VentanaPrincipal();");
         lbNewVentanaPrincipal.setToolTipText("Vista");
         lbNewVentanaPrincipal.setBounds(getPosX(lbMiventana), 100, getAnchoTexto(lbNewVentanaPrincipal), getAltoTexto(lbNewVentanaPrincipal));
         lbNewVentanaPrincipal.setForeground(colorInstancia);
         this.add(lbNewVentanaPrincipal);
 
         //Labels para la segunda linea
-        lbModelo = new JLabel(nombreModelo + " ");
+        lbModelo = new Texto(nombreModelo + " ");
         lbModelo.setToolTipText("Ir al codigo");
         lbModelo.setBounds(10,getPosY(lbNewVentanaPrincipal), getAnchoTexto(lbModelo), getAltoTexto(lbModelo));
         lbModelo.setForeground(colorClase);
         this.add(lbModelo);
 
-        lbMiModelo = new JLabel(nombreModelo + " = ");
+        lbMiModelo = new Texto("mi" + nombreModelo + " = ");
         lbMiModelo.setToolTipText("Ver objeto en RAM");
         lbMiModelo.setBounds(getPosX(lbModelo), getPosY(lbNewVentanaPrincipal), getAnchoTexto(lbMiModelo), getAltoTexto(lbMiModelo));
         lbMiModelo.setForeground(colorObjeto);
         this.add(lbMiModelo);
 
-        lbNewModelo = new JLabel("new" + nombreModelo + "();");
+        lbNewModelo = new Texto("new " + nombreModelo + "();");
         lbNewModelo.setToolTipText("Vista");
         lbNewModelo.setBounds(getPosX(lbMiModelo), getPosY(lbNewVentanaPrincipal), getAnchoTexto(lbNewModelo), getAltoTexto(lbNewModelo));
         lbNewModelo.setForeground(colorInstancia);
         this.add(lbNewModelo);
 
         //Labels para la tercera linea
-        lbControlador = new JLabel("Controlador ");
+        lbControlador = new Texto("Controlador ");
         lbControlador.setToolTipText("Ir al codigo");
         lbControlador.setBounds(10, getPosY(lbNewModelo), getAnchoTexto(lbControlador), getAltoTexto(lbControlador));
         lbControlador.setForeground(colorClase);
         this.add(lbControlador);
 
-        lbMiControlador = new JLabel("miControlador = ");
+        lbMiControlador = new Texto("miControlador = ");
         lbMiControlador.setToolTipText("Ver objeto en RAM");
         lbMiControlador.setBounds(getPosX(lbControlador), getPosY(lbNewModelo), getAnchoTexto(lbMiControlador), getAltoTexto(lbMiControlador));
         lbMiControlador.setForeground(colorObjeto);
         this.add(lbMiControlador);
 
-        lbNewControlador = new JLabel("new Controlador(miVentana, miEmpresa);");
+        lbNewControlador = new Texto("new Controlador(miVentana, miEmpresa);");
         lbNewControlador.setToolTipText("Vista");
         lbNewControlador.setBounds(getPosX(lbMiControlador), getPosY(lbNewModelo), getAnchoTexto(lbNewControlador), getAltoTexto(lbNewControlador));
         lbNewControlador.setForeground(colorInstancia);
@@ -106,23 +105,27 @@ public class PanelTest extends JPanel{
 
     }
 
-    private int getAnchoTexto(JLabel label){
+    public String getNombreModelo() {
+        return nombreModelo;
+    }
+
+    private int getAnchoTexto(Texto label){
         Dimension labelSize = label.getPreferredSize();
         return labelSize.width;
 
 
     }
 
-    private int getAltoTexto(JLabel label){
+    private int getAltoTexto(Texto label){
         Dimension labelSize = label.getPreferredSize();
         return labelSize.height;
     }
 
-    private int getPosX(JLabel label){
+    private int getPosX(Texto label){
         int posicionInicial = getAnchoTexto(label) + label.getX();
         return posicionInicial;
     }
-    private int getPosY(JLabel label){
+    private int getPosY(Texto label){
         int h = 3;
         int posicionInicial = getAltoTexto(label) + label.getY() + h;
         return posicionInicial;

@@ -17,45 +17,47 @@ public class EventosLabel implements MouseListener{
     }
     @Override
     public void mouseClicked(MouseEvent event) {
-        String miEvento = event.getSource().toString();
+        String nombreModelo = miDialogoTest.panelTest.getNombreModelo();
+        String Evento = event.getSource().toString();
         //Eventos primera linea
-        if(event.getSource().toString() == "VentanaPrincipal "){
+        if(Evento.equals("VentanaPrincipal ")){
             System.out.println("VentanaPrincipal");
         }
 
-        if(event.getSource() == miDialogoTest.panelTest.lbMiventana){
+        if(Evento.equals("miVentana = ")){
             System.out.println("miVentana");
         }
 
-        if(event.getSource() == miDialogoTest.panelTest.lbNewVentanaPrincipal){
+        if(Evento.equals("new VentanaPrincipal();")){
             //Aqui se colocan las instancias del sistema MVC
             
             System.out.println("new VentanaPrincipal();");
         }
 
         //Eventos segunda linea
-        if(event.getSource() == miDialogoTest.panelTest.lbModelo){
+        if(Evento.equals(nombreModelo + " ")){
             System.out.println("Modelo");
         }
 
-        if(event.getSource() == miDialogoTest.panelTest.lbMiModelo){
+        if(Evento.equals("mi" + nombreModelo + " = ")){
             System.out.println("miModelo");
         }
 
-        if(event.getSource() == miDialogoTest.panelTest.lbNewModelo){
+        if(Evento.equals("new " + nombreModelo + "();")){
             System.out.println("new Modelo();");
         }
 
+
         //Eventos tercera linea
-        if(event.getSource() == miDialogoTest.panelTest.lbControlador){
+        if(Evento.equals("Controlador ")){
             System.out.println("Controlador");
         }
 
-        if(event.getSource() == miDialogoTest.panelTest.lbMiControlador){
+        if(Evento.equals("miControlador = ")){
             System.out.println("miControlador");
         }
 
-        if(event.getSource() == miDialogoTest.panelTest.lbNewControlador){
+        if(Evento.equals("new Controlador(miVentana, miEmpresa);")){
             System.out.println("new Controlador();");
         }
 
