@@ -13,7 +13,9 @@ import cvo.modelo.Texto;
 public class PanelTest extends JPanel{
     //---Atributos---
 
+
     //Labels
+    //TODO: añadir labels para los numeros que acompañan las lineas
     public Texto lbVentanaPrincipal;
     public Texto lbMiventana;
     public Texto lbNewVentanaPrincipal;

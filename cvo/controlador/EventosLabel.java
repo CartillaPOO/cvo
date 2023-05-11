@@ -9,8 +9,10 @@ import cvo.vista.FrameTest;
 
 public class EventosLabel implements MouseListener{
 
-    //Atributos
+    //---Atributos---
     private FrameTest miDialogoTest;
+
+    //Referencias
 
     public EventosLabel(FrameTest principal){
         miDialogoTest = principal;

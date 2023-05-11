@@ -28,8 +28,9 @@ public class FrameTest extends JFrame {
 
     public FrameTest(String nombreModelo){
         panelTest = new PanelTest(nombreModelo);
-        panelTest.setBounds(0, 0, 440, 300);
+        panelTest.setBounds(0, 0, ANCHO, ALTO);
         this.add(panelTest);
+
 
         //Caracteristicas del dialogo        
         this.setTitle("Test.java");
@@ -38,18 +39,24 @@ public class FrameTest extends JFrame {
         this.setResizable(false);
         this.setBackground(new Color(29, 32, 33));
         this.setVisible(true);
-
-
     }
 
-    public int getPOSX() {
-        return POSX + ANCHO;
+    public int getScreenPOSX(){
+        return POSX;
     }
 
-    public int getPOSY() {
+    public int getScreenPOSY(){
         return POSY;
     }
 
+    public int getWidthPOSX(){
+        return POSX + ANCHO;
     
+    }
+    
+    public int getHeightPOSX(){
+        return POSY + ALTO;
+    
+    }
     
 }
