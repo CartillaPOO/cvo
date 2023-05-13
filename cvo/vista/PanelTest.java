@@ -150,8 +150,15 @@ public class PanelTest extends JPanel{
 
 
     public int getAnchoTotalPanel(){
-        int anchoTotal = getAnchoTexto(lbNewControlador) + lbNewControlador.getX();
-        return anchoTotal;
+        int anchoTotal = getAnchoTexto(lbNewControlador) + lbNewControlador.getX() + 10;
+        if(anchoTotal < 500){
+
+            return 500;
+        }
+        else{
+
+            return anchoTotal;
+        }
     }
 
     public void agregarEscuchadores(MouseListener escuchador)
