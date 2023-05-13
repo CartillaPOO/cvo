@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.JPopupMenu.Separator;
 
+import cvo.modelo.Colores;
 import cvo.modelo.Texto;
 
 public class PanelTest extends JPanel{
@@ -30,10 +31,10 @@ public class PanelTest extends JPanel{
     public Texto lbNewControlador;
 
     //Características del texto
-    public Color colorClase = new Color(229, 56, 38);
-    private Color colorObjeto = new Color(235, 219, 178);
-    private Color colorInstancia = new Color(250, 186, 43);
-    private Color colorFondo = new Color(29, 32, 33);
+    private Color colorClase = Colores.ClASE;
+    private Color colorObjeto = Colores.OBJETO;
+    private Color colorInstancia = Colores.INSTANCIA;
+    private Color colorFondo = Colores.FONDO;
 
 
     //Nombre del modelo
@@ -157,10 +158,6 @@ public class PanelTest extends JPanel{
         int altoTotal = getAltoTexto(lbNewControlador) + lbNewControlador.getY() + 100;
 
         return altoTotal;
-    }
-
-    public Color getColorClase() {
-        return colorClase;
     }
 
     public void agregarEscuchadores(MouseListener escuchador)

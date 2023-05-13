@@ -9,5 +9,6 @@ public class Colores {
     public static Color INSTANCIA = new Color(250, 186, 43);
 
     public static Color RESALTADO = new Color(246, 245, 244);
+    public static Color FONDO = new Color(29, 32, 33);
 
 }
