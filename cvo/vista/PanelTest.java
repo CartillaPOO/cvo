@@ -30,17 +30,16 @@ public class PanelTest extends JPanel{
     public Texto lbNewControlador;
 
     //Características del texto
-    private Color colorClase = new Color(229, 56, 38);
+    public Color colorClase = new Color(229, 56, 38);
     private Color colorObjeto = new Color(235, 219, 178);
     private Color colorInstancia = new Color(250, 186, 43);
     private Color colorFondo = new Color(29, 32, 33);
 
-    private int tamañoFuente = 19;
 
     //Nombre del modelo
     private String nombreModelo;
 
-    public PanelTest(String nombreModelo){
+    public PanelTest(String nombreModelo, int tamañoFuente){
 
         this.nombreModelo = nombreModelo;
         //Caracteriticas de la ventana
@@ -158,6 +157,10 @@ public class PanelTest extends JPanel{
         int altoTotal = getAltoTexto(lbNewControlador) + lbNewControlador.getY() + 100;
 
         return altoTotal;
+    }
+
+    public Color getColorClase() {
+        return colorClase;
     }
 
     public void agregarEscuchadores(MouseListener escuchador)

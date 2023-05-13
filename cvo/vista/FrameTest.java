@@ -26,9 +26,9 @@ public class FrameTest extends JFrame {
     //Paneles
     public PanelTest panelTest;
 
-    public FrameTest(String nombreModelo){
+    public FrameTest(String nombreModelo, int tamañoFuente){
 
-        panelTest = new PanelTest(nombreModelo);
+        panelTest = new PanelTest(nombreModelo, tamañoFuente);
         panelTest.setBounds(0, 0, panelTest.getAnchoTotalPanel(), panelTest.getAltoTotalPanel());
         this.add(panelTest);
 

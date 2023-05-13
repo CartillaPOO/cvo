@@ -1,4 +1,5 @@
 package cvo.controlador;
+import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -74,12 +75,21 @@ public class EventosLabel implements MouseListener{
 
     @Override
     public void mouseEntered(MouseEvent event){
+        String Evento = event.getSource().toString();
+        if(Evento.equals("VentanaPrincipal ")){
+            miFrameTest.panelTest.lbVentanaPrincipal.setForeground(new Color(246, 245, 244));
+        }
         //TODO: Hacer que se cambie el color del label cuando este encima
     }
 
     @Override
     public void mouseExited(MouseEvent event) {
         //TODO: Hacer que vuelva al color original
+        String Evento = event.getSource().toString();
+        if(Evento.equals("VentanaPrincipal ")){
+            miFrameTest.panelTest.lbVentanaPrincipal.setForeground(miFrameTest.panelTest.getColorClase());
+            System.out.println("Saliendo de VentanaPrincipal");
+        }
     }
 
     @Override
