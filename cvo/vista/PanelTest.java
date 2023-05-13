@@ -146,6 +146,14 @@ public class PanelTest extends JPanel{
         return posicionInicial;
     }
 
+    //Ancho total del panel
+
+
+    public int getAnchoTotalPanel(){
+        int anchoTotal = getAnchoTexto(lbNewControlador) + lbNewControlador.getX();
+        return anchoTotal;
+    }
+
     public void agregarEscuchadores(MouseListener escuchador)
     {
         //Escuchadores para la primera linea
