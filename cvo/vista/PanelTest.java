@@ -2,6 +2,7 @@ package cvo.vista;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.event.MouseListener;
 
 import javax.swing.JPanel;
@@ -28,11 +29,13 @@ public class PanelTest extends JPanel{
     public Texto lbMiControlador;
     public Texto lbNewControlador;
 
-    //Colores
+    //Características del texto
     private Color colorClase = new Color(229, 56, 38);
     private Color colorObjeto = new Color(235, 219, 178);
     private Color colorInstancia = new Color(250, 186, 43);
     private Color colorFondo = new Color(29, 32, 33);
+
+    private int tamañoFuente = 20;
 
     //Nombre del modelo
     private String nombreModelo;
@@ -46,6 +49,7 @@ public class PanelTest extends JPanel{
         //Labels para la primera linea
         lbVentanaPrincipal = new Texto("VentanaPrincipal ");
         lbVentanaPrincipal.setToolTipText("Ir al codigo");
+        lbVentanaPrincipal.setFont(new Font("Droid Sans Mono", Font.BOLD, tamañoFuente));
         lbVentanaPrincipal.setBounds(10, 100, getAnchoTexto(lbVentanaPrincipal), getAltoTexto(lbVentanaPrincipal));
         lbVentanaPrincipal.setForeground(colorClase);
         this.add(lbVentanaPrincipal);
@@ -53,6 +57,7 @@ public class PanelTest extends JPanel{
 
         lbMiventana = new Texto("miVentana = ");
         lbMiventana.setToolTipText("Ver objeto en RAM");
+        lbMiventana.setFont(new Font("Droid Sans Mono", Font.BOLD, tamañoFuente));
         lbMiventana.setBounds(getPosX(lbVentanaPrincipal), 100, getAnchoTexto(lbMiventana), getAltoTexto(lbMiventana));
         lbMiventana.setForeground(colorObjeto);
         this.add(lbMiventana);
@@ -60,6 +65,7 @@ public class PanelTest extends JPanel{
 
         lbNewVentanaPrincipal = new Texto("new VentanaPrincipal();");
         lbNewVentanaPrincipal.setToolTipText("Vista");
+        lbNewVentanaPrincipal.setFont(new Font("Droid Sans Mono", Font.BOLD, tamañoFuente));
         lbNewVentanaPrincipal.setBounds(getPosX(lbMiventana), 100, getAnchoTexto(lbNewVentanaPrincipal), getAltoTexto(lbNewVentanaPrincipal));
         lbNewVentanaPrincipal.setForeground(colorInstancia);
         this.add(lbNewVentanaPrincipal);
@@ -67,18 +73,21 @@ public class PanelTest extends JPanel{
         //Labels para la segunda linea
         lbModelo = new Texto(nombreModelo + " ");
         lbModelo.setToolTipText("Ir al codigo");
+        lbModelo.setFont(new Font("Droid Sans Mono", Font.BOLD, tamañoFuente));
         lbModelo.setBounds(10,getPosY(lbNewVentanaPrincipal), getAnchoTexto(lbModelo), getAltoTexto(lbModelo));
         lbModelo.setForeground(colorClase);
         this.add(lbModelo);
 
         lbMiModelo = new Texto("mi" + nombreModelo + " = ");
         lbMiModelo.setToolTipText("Ver objeto en RAM");
+        lbMiModelo.setFont(new Font("Droid Sans Mono", Font.BOLD, tamañoFuente));
         lbMiModelo.setBounds(getPosX(lbModelo), getPosY(lbNewVentanaPrincipal), getAnchoTexto(lbMiModelo), getAltoTexto(lbMiModelo));
         lbMiModelo.setForeground(colorObjeto);
         this.add(lbMiModelo);
 
         lbNewModelo = new Texto("new " + nombreModelo + "();");
         lbNewModelo.setToolTipText("Vista");
+        lbNewModelo.setFont(new Font("Droid Sans Mono", Font.BOLD, tamañoFuente));
         lbNewModelo.setBounds(getPosX(lbMiModelo), getPosY(lbNewVentanaPrincipal), getAnchoTexto(lbNewModelo), getAltoTexto(lbNewModelo));
         lbNewModelo.setForeground(colorInstancia);
         this.add(lbNewModelo);
@@ -86,18 +95,21 @@ public class PanelTest extends JPanel{
         //Labels para la tercera linea
         lbControlador = new Texto("Controlador ");
         lbControlador.setToolTipText("Ir al codigo");
+        lbControlador.setFont(new Font("Droid Sans Mono", Font.BOLD, tamañoFuente));
         lbControlador.setBounds(10, getPosY(lbNewModelo), getAnchoTexto(lbControlador), getAltoTexto(lbControlador));
         lbControlador.setForeground(colorClase);
         this.add(lbControlador);
 
         lbMiControlador = new Texto("miControlador = ");
         lbMiControlador.setToolTipText("Ver objeto en RAM");
+        lbMiControlador.setFont(new Font("Droid Sans Mono", Font.BOLD, tamañoFuente));
         lbMiControlador.setBounds(getPosX(lbControlador), getPosY(lbNewModelo), getAnchoTexto(lbMiControlador), getAltoTexto(lbMiControlador));
         lbMiControlador.setForeground(colorObjeto);
         this.add(lbMiControlador);
 
         lbNewControlador = new Texto("new Controlador(miVentana, miEmpresa);");
         lbNewControlador.setToolTipText("Vista");
+        lbNewControlador.setFont(new Font("Droid Sans Mono", Font.BOLD, tamañoFuente));
         lbNewControlador.setBounds(getPosX(lbMiControlador), getPosY(lbNewModelo), getAnchoTexto(lbNewControlador), getAltoTexto(lbNewControlador));
         lbNewControlador.setForeground(colorInstancia);
         this.add(lbNewControlador);
