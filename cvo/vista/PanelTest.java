@@ -35,7 +35,7 @@ public class PanelTest extends JPanel{
     private Color colorInstancia = new Color(250, 186, 43);
     private Color colorFondo = new Color(29, 32, 33);
 
-    private int tamañoFuente = 100;
+    private int tamañoFuente = 19;
 
     //Nombre del modelo
     private String nombreModelo;
@@ -152,6 +152,12 @@ public class PanelTest extends JPanel{
     public int getAnchoTotalPanel(){
         int anchoTotal = getAnchoTexto(lbNewControlador) + lbNewControlador.getX() + 10;
         return anchoTotal;
+    }
+
+    public int getAltoTotalPanel(){
+        int altoTotal = getAltoTexto(lbNewControlador) + lbNewControlador.getY() + 100;
+
+        return altoTotal;
     }
 
     public void agregarEscuchadores(MouseListener escuchador)

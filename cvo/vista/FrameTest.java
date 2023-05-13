@@ -27,14 +27,17 @@ public class FrameTest extends JFrame {
     public PanelTest panelTest;
 
     public FrameTest(String nombreModelo){
+
         panelTest = new PanelTest(nombreModelo);
-        panelTest.setBounds(0, 0, panelTest.getAnchoTotalPanel(), ALTO);
+        panelTest.setBounds(0, 0, panelTest.getAnchoTotalPanel(), panelTest.getAltoTotalPanel());
         this.add(panelTest);
 
+        ANCHO = panelTest.getAnchoTotalPanel();
+        ALTO = panelTest.getAltoTotalPanel();
 
         //Caracteristicas del dialogo        
         this.setTitle("Test.java");
-        this.setSize(panelTest.getAnchoTotalPanel(), ALTO);
+        this.setSize(ANCHO, ALTO);
         this.setLocation(POSX, POSY);
         this.setResizable(false);
         this.setBackground(new Color(29, 32, 33));
