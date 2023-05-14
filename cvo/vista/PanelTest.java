@@ -151,6 +151,10 @@ public class PanelTest extends JPanel{
 
     public int getAnchoTotalPanel(){
         int anchoTotal = getAnchoTexto(lbNewControlador) + lbNewControlador.getX() + 10;
+        
+        if(anchoTotal < getAnchoTexto(lbNewModelo) + lbNewModelo.getX() + 10)
+            anchoTotal = getAnchoTexto(lbNewModelo) + lbNewModelo.getX() + 10;
+        
         return anchoTotal;
     }
 
