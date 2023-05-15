@@ -1,5 +1,6 @@
 package cvo.controlador;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -128,6 +129,7 @@ public class EventosLabel implements MouseListener{
         // Color original primera linea
         if(Evento.equals("VentanaPrincipal ")){
             miFrameTest.panelTest.lbVentanaPrincipal.setForeground(Colores.ClASE);
+            miFrameTest.panelTest.lbVentanaPrincipal.setFont(new Font("Droid Sans Mono", Font.BOLD, 15));
             System.out.println("Saliendo de VentanaPrincipal");
         }
 
