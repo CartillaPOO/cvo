@@ -65,7 +65,7 @@ public class EventosLabel implements MouseListener{
         }
 
         if(Evento.equals("new Controlador(miVentana, miEmpresa);")){
-            System.out.println("new Controlador();");
+            System.out.println("new controlador");
         }
 
         //---Eventos Para VentanaPrincipal---
@@ -118,6 +118,16 @@ public class EventosLabel implements MouseListener{
         if(Evento.equals("new Controlador(miVentana, miEmpresa);")){
             miFrameTest.panelTest.lbNewControlador.setForeground(Colores.RESALTADO);
         }
+
+        //Eventos Boton
+
+        if(Evento.equals("Diagrama de objetos")){
+            System.out.println("Entrando al boton");
+            miFrameTest.panelTest.btDiagramaObjetos.setForeground(Colores.RESALTADO);
+            
+        }
+
+        System.out.println("Evento: " + Evento);
         //TODO: Hacer que se cambie el color del label cuando este encima
     }
 
@@ -129,7 +139,6 @@ public class EventosLabel implements MouseListener{
         // Color original primera linea
         if(Evento.equals("VentanaPrincipal ")){
             miFrameTest.panelTest.lbVentanaPrincipal.setForeground(Colores.ClASE);
-            miFrameTest.panelTest.lbVentanaPrincipal.setFont(new Font("Droid Sans Mono", Font.BOLD, 15));
             System.out.println("Saliendo de VentanaPrincipal");
         }
 
@@ -167,6 +176,13 @@ public class EventosLabel implements MouseListener{
 
         if(Evento.equals("new Controlador(miVentana, miEmpresa);")){
             miFrameTest.panelTest.lbNewControlador.setForeground(Colores.INSTANCIA);
+        }
+
+        //Color original boton
+        if(Evento.equals("Diagrama de objetos")){
+            System.out.println("Entrando al boton");
+            miFrameTest.panelTest.btDiagramaObjetos.setForeground(Colores.FUENTE_BOTON);
+            
         }
     }
 

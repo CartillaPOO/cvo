@@ -33,6 +33,8 @@ public class PanelTest extends JPanel{
 
     //Botones
     public Boton btDiagramaObjetos;
+    public Color btFondo = Colores.FONDO_BOTON;
+    public Color btFuente = Colores.FUENTE_BOTON;
 
     //Características del texto
     private Color colorClase = Colores.ClASE;
@@ -120,7 +122,11 @@ public class PanelTest extends JPanel{
 
         //Boton para ver el diagrama de objetos
         btDiagramaObjetos = new Boton("Diagrama de objetos");
-        btDiagramaObjetos.setBounds((getAnchoTotalPanel()/2) - 75, (getAltoTotalPanel()) - 60, 150, 20);
+        btDiagramaObjetos.setFont(new Font("Droid Sans Mono", Font.BOLD, tamañoFuente));
+        btDiagramaObjetos.setBounds((getAnchoTotalPanel()/2) - (getAnchoBoton(btDiagramaObjetos)/2), (getAltoTotalPanel()) - 60, getAnchoBoton(btDiagramaObjetos), getAltoBoton(btDiagramaObjetos));
+        btDiagramaObjetos.setBackground(btFondo);
+        btDiagramaObjetos.setForeground(btFuente);
+        btDiagramaObjetos.setFocusable(false);
         this.add(btDiagramaObjetos);
 
         
@@ -155,6 +161,16 @@ public class PanelTest extends JPanel{
         int posicionInicial = getAltoTexto(label) + label.getY() + h;
         return posicionInicial;
     }
+    //Ancho y alto Boton
+    private int getAnchoBoton(Boton button){
+        Dimension buttonSize = button.getPreferredSize();
+        return buttonSize.width;
+    }
+
+    private int getAltoBoton(Boton button){
+        Dimension buttonSize = button.getPreferredSize();
+        return buttonSize.height;
+    }
 
     //Ancho total del panel
 
@@ -174,8 +190,9 @@ public class PanelTest extends JPanel{
         return altoTotal;
     }
 
-    public void agregarEscuchadores(MouseListener escuchador)
-    {
+    //Boton resaltado
+
+    public void agregarEscuchadores(MouseListener escuchador){
         //Escuchadores para la primera linea
         lbVentanaPrincipal.addMouseListener(escuchador);
         lbMiventana.addMouseListener(escuchador);
@@ -190,6 +207,9 @@ public class PanelTest extends JPanel{
         lbControlador.addMouseListener(escuchador);
         lbMiControlador.addMouseListener(escuchador);
         lbNewControlador.addMouseListener(escuchador);
+
+        //Escuchadores para los botones
+        btDiagramaObjetos.addMouseListener(escuchador);
     }
 
 }
