@@ -7,4 +7,9 @@ public class Boton extends JButton{
     public Boton(String texto){
         setText(texto);
     }
+
+    @Override
+    public String toString() {
+        return getText();
+    }
 }

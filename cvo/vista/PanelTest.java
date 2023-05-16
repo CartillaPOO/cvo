@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.JPopupMenu.Separator;
 
+import cvo.modelo.Boton;
 import cvo.modelo.Colores;
 import cvo.modelo.Texto;
 
@@ -29,6 +30,9 @@ public class PanelTest extends JPanel{
     public Texto lbControlador;
     public Texto lbMiControlador;
     public Texto lbNewControlador;
+
+    //Botones
+    public Boton btDiagramaObjetos;
 
     //Características del texto
     private Color colorClase = Colores.ClASE;
@@ -113,6 +117,12 @@ public class PanelTest extends JPanel{
         lbNewControlador.setBounds(getPosX(lbMiControlador), getPosY(lbNewModelo), getAnchoTexto(lbNewControlador), getAltoTexto(lbNewControlador));
         lbNewControlador.setForeground(colorInstancia);
         this.add(lbNewControlador);
+
+        //Boton para ver el diagrama de objetos
+        btDiagramaObjetos = new Boton("Diagrama de objetos");
+        btDiagramaObjetos.setBounds((getAnchoTotalPanel()/2) - 75, (getAltoTotalPanel()) - 60, 150, 20);
+        this.add(btDiagramaObjetos);
+
         
         //Caracteristicas del panel
         this.setBackground(colorFondo);
